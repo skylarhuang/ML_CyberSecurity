@@ -15,8 +15,8 @@ Email:	sh4507@nyu.edu
 ./MNIST_data			MNIST data downloaded
 
 ./temp				Trained models are saved here
-	/trained_model		Baseline Classifier
-	/trained_model_new	Re-trained baseline Classifier
+	/trained_model		Saved baseline Classifier
+	/trained_model_new	Saved re-trained baseline Classifier
 
 lab2_report.pdf			Lab report
 lab2_report.tex			Lab report LaTex code
@@ -34,8 +34,10 @@ Activate Jupyter Notebook. Instructions are shown in the notebook codes.
 All results for the original lab requirements can be found in:
 	Adversarial_Attacks_on_Deep_Neural_Networks.ipynb
 
-To reproduce the result, input epsilon value and save images, use file:
+To reproduce the results, input epsilon value and save images, use file:
 	Result_Reproduction.ipynb
+
+Don't interrupt running cell. If have to interrupt, choose restart and clean all output.
 
 =======================================================================================
 =======================================================================================
