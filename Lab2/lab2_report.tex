@@ -1,0 +1,91 @@
+\documentclass{article} 
+\usepackage[top=1in, bottom=1in, left=1.25in, right=1.25in]{geometry}
+
+\usepackage{booktabs}
+\usepackage{graphicx} 
+\usepackage{pythonhighlight} 
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+\author{Sui Huang}
+\title{Lab 2 Report: Adversarial Attacks on Deep Neural Networks}
+\maketitle
+
+\section{FGSM based untargeted attacks}
+\paragraph{The success rate of attack increases as epsilon increases.} \mbox{}\\
+
+\begin{table}[h]
+\centering    
+ \begin{tabular}{rrrr} 
+     \hline
+	\hline
+       & $\epsilon $ & $ Success Rate $\\ [0.5ex]
+       \hline
+       1 & 1 & 0.03  \\
+       2 & 5 & 0.26  \\
+       3 & 10 & 0.72 \\
+       4 & 20 & 0.991 \\
+       5 & 30 & 0.998  \\
+       6 & 40 & 1.0  \\
+       7 & 50 & 1.0  \\
+       \hline
+       \hline
+   \end{tabular}
+\end{table}
+
+\section{FGSM based targeted attacks}
+\paragraph{The success rate of attack increases as epsilon increases.}\mbox{}\\ But not as successful as untargeted attack.
+\begin{table}[h]
+\centering    
+ \begin{tabular}{rrrr} 
+     \hline
+	\hline
+       & $\epsilon $ & $ Success Rate $\\ [0.5ex]
+       \hline
+       1 & 1 & 0.0027  \\
+       2 & 5 & 0.0456  \\
+       3 & 10 & 0.269 \\
+       4 & 20 & 0.712 \\
+       5 & 30 & 0.876  \\
+       6 & 40 & 0.954 \\
+       7 & 50 & 0.9866 \\
+       \hline
+       \hline
+   \end{tabular}
+\end{table}
+
+
+\section{Adversarial Retraining against Untargeted FGSM Attacks}
+\paragraph{Accuracy of the adversarially retrained DNN on the original test dataset} \mbox{}\\
+Accuracy: 0.9314
+
+\paragraph{FGSM based untargeted attacks using images from the clean test set} \mbox{}\\ 
+Epsilon: 10 Attack success rate 0.8142
+
+\paragraph{Thoughts} \mbox{}\\Based on the result, I don't think the adversarially retrained DNN is robust against adversarial perturbations.
+\\(Some of my friends got the result opposite from mine, but I can't figure out the reason, so I stick to what I got) 
+
+\paragraph{Repeat Step 3 }\mbox{}\\
+\begin{table}[h]
+\centering    
+ \begin{tabular}{rrrr} 
+     \hline
+	\hline
+       & $\epsilon $ & $ Accuracy $ & $ Success Rate $\\ [0.5ex]
+       \hline
+       1 & 1 & 0.90 & 0.030  \\
+       2 & 5 & 0.62 & 0.299 \\
+       3 & 10 & 0.06 & 0.92 \\
+       4 & 20 & 0 & 1 \\
+       5 & 30 & 0 & 1 \\
+       6 & 40 & 0 & 1 \\
+       7 & 50 & 0 & 1 \\
+       \hline
+       \hline
+   \end{tabular}
+\end{table}
+
+
+\end{document}
